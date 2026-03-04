@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/J&GLogo.png";
 
 export default function Navbar() {
   return (
@@ -6,9 +7,9 @@ export default function Navbar() {
       <div className="navbar-inner">
 
         {/* Logo */}
-        <NavLink to="/" className="logo">
-          J & G Construction
-        </NavLink>
+       <NavLink to="/" className="logo">
+  <img src={logo} alt="J & G Construction" className="logo-img" />
+</NavLink>
 
         {/* Navigation Links */}
         <nav className="nav-links">
