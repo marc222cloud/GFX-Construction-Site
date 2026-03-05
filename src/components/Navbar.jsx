@@ -1,3 +1,4 @@
+import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/J&GLogo.png";
 

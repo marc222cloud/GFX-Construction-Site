@@ -1,0 +1,87 @@
+
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-inner {
+  height: 130px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 104px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 22px;
+  opacity: 0.92;
+}
+
+.nav-links a {
+  padding: 6px 2px;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* Phone button */
+.phone-btn {
+  background: #e01616;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.phone-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .navbar-inner {
+    height: 86px;
+    padding: 0 18px;
+  }
+
+  .logo-img {
+    height: 62px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 18px;
+  }
+
+  .phone-btn {
+    padding: 12px 14px;
+    font-size: 18px;
+  }
+}

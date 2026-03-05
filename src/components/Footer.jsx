@@ -1,3 +1,4 @@
+import "./Footer.css";
 import logo from "../assets/J&GLogo.png";
 export default function Footer() {
   return (
