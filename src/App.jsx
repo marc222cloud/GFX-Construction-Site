@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Siding from "./pages/Siding";
+import Roofing from "./pages/Roofing";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services/siding" element={<Siding />} />
+          <Route path="/services/roofing" element={<Roofing />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
