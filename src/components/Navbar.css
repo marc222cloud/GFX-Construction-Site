@@ -45,10 +45,6 @@
   padding: 6px 2px;
 }
 
-.nav-links a.active {
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
 
 .nav-links a:hover {
   text-decoration: underline;

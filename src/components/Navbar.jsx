@@ -8,12 +8,22 @@ export default function Navbar() {
       <div className="navbar-inner">
 
         {/* Logo */}
-       <NavLink to="/" className="logo">
+       <NavLink
+  to="/"
+  className="logo"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
   <img src={logo} alt="J & G Construction" className="logo-img" />
 </NavLink>
 
         {/* Navigation Links */}
         <nav className="nav-links">
+          <NavLink
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Home
+          </NavLink>
           <NavLink to="/about">About</NavLink>
 
           <div className="services-dropdown">
@@ -31,7 +41,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <NavLink to="/book">Book</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
 
         {/* Phone Button */}

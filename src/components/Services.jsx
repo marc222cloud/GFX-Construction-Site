@@ -51,7 +51,7 @@ const services = [
     alt: "Bright kitchen remodel",
     description:
       "Upgrade your kitchen with custom layouts, cabinetry, and finishes designed for both style and everyday living.",
-    link: "/services/kitchenremodel",
+    link: "/services/kitchen",
   },
   {
     id: 6,
