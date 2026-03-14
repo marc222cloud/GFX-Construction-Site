@@ -24,6 +24,7 @@ export default function Navbar() {
             <div className="dropdown-menu">
               <NavLink to="/services/siding">Siding</NavLink>
               <NavLink to="/services/roofing">Roofing</NavLink>
+              <NavLink to="/services/bathroom">Bathroom</NavLink>
               <NavLink to="/services/storm-damage">Storm Damage</NavLink>
               <NavLink to="/services/kitchen">Kitchen</NavLink>
               <NavLink to="/services/general-contracting">General Contracting</NavLink>
