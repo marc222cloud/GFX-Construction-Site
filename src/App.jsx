@@ -9,6 +9,7 @@ import Kitchen from "./pages/Kitchen";
 import StormDamage from "./pages/StormDamage";
 import General from "./pages/General";
 import Aboutus from "./pages/Aboutus";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/services/kitchen" element={<Kitchen />} />
           <Route path="/services/storm-damage" element={<StormDamage />} />
           <Route path="/services/general-contracting" element={<General />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

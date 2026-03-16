@@ -1,0 +1,131 @@
+
+
+/* ===== Contact Page ===== */
+.contact-page {
+  background: #1f1f1f;
+  color: #f2f2f2;
+}
+
+.contact-page__section {
+  padding: 56px 0 64px;
+}
+
+.contact-page__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-page__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page__title {
+  margin: 0 0 22px;
+  font-size: clamp(38px, 4.2vw, 56px);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.contact-page__title span {
+  color: #ef3a2f;
+}
+
+.contact-page__intro {
+  margin: 0 0 34px;
+  max-width: 760px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #ededed;
+}
+
+.contact-page__form-wrap {
+  width: 100%;
+}
+
+.contact-page__form-wrap section {
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: auto !important;
+}
+
+.contact-page__right {
+  padding-top: 18px;
+  margin-left: 20px;
+}
+
+.contact-page__right h2 {
+  margin: 0 0 30px;
+  font-size: clamp(32px, 3vw, 44px);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.contact-page__info-block {
+  margin-bottom: 30px;
+}
+
+.contact-page__info-block p {
+  margin: 0 0 6px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #f2f2f2;
+}
+
+.contact-page__name {
+  font-size: 18px !important;
+  font-weight: 700;
+}
+
+.contact-page__phone {
+  font-size: 17px !important;
+  color: #ef3a2f;
+  text-decoration: underline;
+}
+
+.contact-page__info-block a {
+  color: #ef3a2f;
+  text-decoration: underline;
+}
+
+/* address lines */
+.contact-page__info-block p:nth-child(n+2) {
+  color: #ef3a2f;
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .contact-page__container {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .contact-page__right {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-page__section {
+    padding: 40px 0 48px;
+  }
+
+  .contact-page__container {
+    padding: 0 18px;
+    gap: 34px;
+  }
+
+  .contact-page__intro {
+    font-size: 16px;
+    margin-bottom: 26px;
+  }
+
+  .contact-page__info-block {
+    margin-bottom: 22px;
+  }
+}
