@@ -3,6 +3,7 @@
 import EstimateForm from "../components/EstimateForm";
 import Testimonials from "../components/Testimonials";
 import stormHero from "../assets/stormdamage.jpg";
+import stormDetail from "../assets/stormdamage1.jpg";
 import "./StormDamage.css";
 
 export default function StormDamage() {
@@ -46,11 +47,11 @@ export default function StormDamage() {
       <section className="service-detail">
         <div className="service-detail__container">
           <div className="service-detail__image-wrap">
-            <img
-              src={stormHero}
-              alt="Storm damaged home in need of repair"
-              className="service-detail__image"
-            />
+          <img
+            src={stormDetail}
+            alt="Storm damaged home in need of repair"
+            className="service-detail__image"
+          />
 
             <div className="service-detail__card">
               <h3>Fast & Reliable Storm Damage Repairs</h3>
