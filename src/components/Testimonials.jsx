@@ -1,29 +1,22 @@
 import "./Testimonials.css";
 
-import person1 from "../assets/person1.jpg";
-import person2 from "../assets/person2.jpg";
-import person3 from "../assets/person3.jpg";
-
 const testimonials = [
   {
     id: 1,
     name: "Eric A.",
     location: "Utica, NY",
-    image: person1,
     quote: "My kitchen looks amazing, Thanks!",
   },
   {
     id: 2,
     name: "Sarah W.",
     location: "Camden, NY",
-    image: person2,
     quote: "Great staff, great vibe",
   },
   {
     id: 3,
     name: "John D. R.",
     location: "New Hartford, NY",
-    image: person3,
     quote: "Solid work, my roof looks much more improved.",
   },
 ];
@@ -42,11 +35,9 @@ export default function Testimonials() {
             </div>
 
             <div className="testimonial-card__middle">
-              <img
-                src={item.image}
-                alt={`${item.name} testimonial`}
-                className="testimonial-card__image"
-              />
+              <div className="testimonial-card__avatar">
+                {item.name.split(" ").map(n => n[0]).join("")}
+              </div>
 
               <div className="testimonial-card__info">
                 <p className="testimonial-card__name">{item.name}</p>
