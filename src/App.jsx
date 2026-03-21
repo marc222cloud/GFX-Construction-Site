@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Siding from "./pages/Siding";
 import Roofing from "./pages/Roofing";
@@ -16,6 +17,7 @@ export default function App() {
     <div className="app">
       <Navbar />
       <main className="main">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<Aboutus />} />
