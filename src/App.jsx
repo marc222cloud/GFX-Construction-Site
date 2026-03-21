@@ -9,7 +9,7 @@ import Bathroom from "./pages/Bathroom";
 import Kitchen from "./pages/Kitchen";
 import StormDamage from "./pages/StormDamage";
 import General from "./pages/General";
-import Aboutus from "./pages/AboutUs";
+import Aboutus from "./pages/Aboutus";
 import Contact from "./pages/Contact";
 
 export default function App() {
