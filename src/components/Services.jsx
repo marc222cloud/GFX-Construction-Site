@@ -1,4 +1,5 @@
 import "./Services.css";
+import { Link } from "react-router-dom";
 
 import sidingImg from "../assets/siding.jpg";
 import roofingImg from "../assets/roofing.jpg";
@@ -83,9 +84,9 @@ export default function Services() {
 
               <p className="service-card__description">{service.description}</p>
 
-              <a href={service.link} className="service-card__button">
+              <Link to={service.link} className="service-card__button">
                 Get More Info
-              </a>
+              </Link>
             </article>
           ))}
         </div>

@@ -9,7 +9,7 @@ export default function Aboutus() {
           <h1>Built on experience. Backed by integrity.</h1>
 
           <p className="about-page__intro">
-            J &amp; G Construction has proudly served homeowners and businesses
+            GFX Construction has proudly served homeowners and businesses
             with dependable craftsmanship for over 20 years. From roofing and
             siding to interior remodeling and general contracting, we approach
             every project with honesty, attention to detail, and a commitment to
@@ -19,13 +19,13 @@ export default function Aboutus() {
           <div className="about-page__image-wrap">
             <img
               src={teamworking}
-              alt="J & G Construction team working on a project"
+              alt="GFX Construction team working on a project"
               className="about-page__image"
             />
           </div>
 
           <div className="about-page__details">
-            <h2>Why Homeowners Choose J &amp; G</h2>
+            <h2>Why Homeowners Choose GFX</h2>
 
             <p className="about-page__body">
               We know that inviting a contractor into your home is a big decision.
