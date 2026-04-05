@@ -9,7 +9,7 @@
   content: "";
   flex: 1;
   background-size: cover;
-  background-position: center top;
+  background-position: 70% center;
   background-repeat: no-repeat;
 }
 
@@ -71,7 +71,7 @@
     width: 100%;
     min-height: 320px;
     background-size: contain;
-    background-position: center top;
+    background-position: 70% 30%;
     background-color: transparent;
   }
 
