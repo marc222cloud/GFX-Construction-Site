@@ -1,36 +1,57 @@
 import "./Testimonials.css";
 
+const testimonialsText = {
+  en: {
+    title: "Testimonials",
+    rating: "Rating",
+  },
+  es: {
+    title: "Testimonios",
+    rating: "Calificación",
+  },
+};
+
 const testimonials = [
   {
     id: 1,
     name: "Eric A.",
     location: "Utica, NY",
-    quote: "My kitchen looks amazing, Thanks!",
+    quote: {
+      en: "My kitchen looks amazing, Thanks!",
+      es: "¡Mi cocina se ve increíble, gracias!",
+    },
   },
   {
     id: 2,
     name: "Sarah W.",
     location: "Camden, NY",
-    quote: "Great staff, great vibe",
+    quote: {
+      en: "Great staff, great vibe",
+      es: "Excelente equipo, muy buen ambiente",
+    },
   },
   {
     id: 3,
     name: "John D. R.",
     location: "New Hartford, NY",
-    quote: "Solid work, my roof looks much more improved.",
+    quote: {
+      en: "Solid work, my roof looks much more improved.",
+      es: "Buen trabajo, mi techo se ve mucho mejor.",
+    },
   },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ language = "en" }) {
+  const text = testimonialsText[language] || testimonialsText.en;
   return (
     <section className="testimonials">
-      <h2 className="testimonials__title">Testimonials</h2>
+      <h2 className="testimonials__title">{text.title}</h2>
 
       <div className="testimonials__grid">
         {testimonials.map((item) => (
           <article key={item.id} className="testimonial-card">
             <div className="testimonial-card__top">
-              <span className="testimonial-card__rating-label">Rating</span>
+              <span className="testimonial-card__rating-label">{text.rating}</span>
               <span className="testimonial-card__stars">★★★★★</span>
             </div>
 
@@ -45,7 +66,7 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <p className="testimonial-card__quote">“{item.quote}”</p>
+            <p className="testimonial-card__quote">“{item.quote[language] || item.quote.en}”</p>
           </article>
         ))}
       </div>

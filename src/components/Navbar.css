@@ -100,6 +100,26 @@
   z-index: 6001;
 }
 
+/* Language button */
+.lang-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #e01616;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: #e01616;
+  box-shadow: 0 0 10px rgba(224, 22, 22, 0.7), 0 0 20px rgba(224, 22, 22, 0.4);
+}
+
 /* Phone button */
 .phone-btn {
   background: #e01616;
@@ -143,6 +163,11 @@
     font-size: 15px;
   }
 
+  .lang-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
   .phone-btn {
     padding: 10px 10px;
     font-size: 14px;
@@ -174,6 +199,12 @@
 
   .dropdown-menu a {
     font-size: 14px;
+  }
+
+  .lang-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+    border-width: 1px;
   }
 
   .phone-btn {

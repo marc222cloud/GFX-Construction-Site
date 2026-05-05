@@ -2,7 +2,38 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/GFXLogo.png";
 
-export default function Navbar() {
+const navText = {
+  en: {
+    home: "Home",
+    about: "About",
+    services: "Services",
+    siding: "Siding",
+    roofing: "Roofing",
+    bathroom: "Bathroom",
+    stormDamage: "Storm Damage",
+    kitchen: "Kitchen",
+    generalContracting: "General Contracting",
+    contact: "Contact",
+    languageToggle: "ESPANOL",
+  },
+  es: {
+    home: "Inicio",
+    about: "Nosotros",
+    services: "Servicios",
+    siding: "Revestimiento",
+    roofing: "Techos",
+    bathroom: "Baños",
+    stormDamage: "Daños por Tormenta",
+    kitchen: "Cocinas",
+    generalContracting: "Construcción General",
+    contact: "Contacto",
+    languageToggle: "ENGLISH",
+  },
+};
+
+export default function Navbar({ language, setLanguage }) {
+  const text = navText[language];
+  const phoneNumber = language === "en" ? "315-982-3057" : "315-269-6191";
   return (
     <header className="navbar">
       <div className="navbar-inner">
@@ -22,31 +53,38 @@ export default function Navbar() {
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            Home
+            {text.home}
           </NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/about">{text.about}</NavLink>
 
           <div className="services-dropdown">
             <span className="services-link">
-              Services
+              {text.services}
             </span>
 
             <div className="dropdown-menu">
-              <NavLink to="/services/siding">Siding</NavLink>
-              <NavLink to="/services/roofing">Roofing</NavLink>
-              <NavLink to="/services/bathroom">Bathroom</NavLink>
-              <NavLink to="/services/storm-damage">Storm Damage</NavLink>
-              <NavLink to="/services/kitchen">Kitchen</NavLink>
-              <NavLink to="/services/general-contracting">General Contracting</NavLink>
+              <NavLink to="/services/siding">{text.siding}</NavLink>
+              <NavLink to="/services/roofing">{text.roofing}</NavLink>
+              <NavLink to="/services/bathroom">{text.bathroom}</NavLink>
+              <NavLink to="/services/storm-damage">{text.stormDamage}</NavLink>
+              <NavLink to="/services/kitchen">{text.kitchen}</NavLink>
+              <NavLink to="/services/general-contracting">{text.generalContracting}</NavLink>
             </div>
           </div>
 
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/contact">{text.contact}</NavLink>
         </nav>
 
+        <button
+          className="lang-btn"
+          onClick={() => setLanguage(language === "en" ? "es" : "en")}
+        >
+          {text.languageToggle}
+        </button>
+
         {/* Phone Button */}
-        <a href="tel:3159823057" className="phone-btn">
-          315-982-3057
+        <a href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`} className="phone-btn">
+          {phoneNumber}
         </a>
 
       </div>

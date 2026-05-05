@@ -4,14 +4,14 @@ import Testimonials from "../components/Testimonials";
 import About from "../components/About";
 import Gallery from "../components/Gallery";
 
-export default function Home() {
+export default function Home({ language }) {
   return (
     <>
-      <Hero />
-      <Services />
-      <Gallery />
-      <Testimonials />
-      <About />
+      <Hero language={language} />
+      <Services language={language} />
+      <Gallery language={language} />
+      <Testimonials language={language} />
+      <About language={language} />
     </>
   );
 }

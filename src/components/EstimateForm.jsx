@@ -8,7 +8,49 @@ const initial = {
   message: "",
 };
 
-export default function EstimateForm({ serviceName = "Estimate" }) {
+const formText = {
+  en: {
+    ariaLabel: "Get a free estimate for",
+    kicker: "GET A FREE ESTIMATE",
+    firstName: "First Name:",
+    lastName: "Last Name:",
+    email: "Email:",
+    phone: "Phone Number:",
+    message: "What can we help you with?",
+    required: "(required)",
+    submit: "Request Estimate",
+    errors: {
+      firstName: "First name is required.",
+      lastName: "Last name is required.",
+      email: "Email is required.",
+      phone: "Phone number is required.",
+      message: "Please tell us what you need help with.",
+    },
+    success: "request sent! We'll reach out soon.",
+  },
+  es: {
+    ariaLabel: "Obtenga un estimado gratis para",
+    kicker: "OBTENGA UN ESTIMADO GRATIS",
+    firstName: "Nombre:",
+    lastName: "Apellido:",
+    email: "Correo electrónico:",
+    phone: "Número de teléfono:",
+    message: "¿En qué podemos ayudarle?",
+    required: "(requerido)",
+    submit: "Solicitar Estimado",
+    errors: {
+      firstName: "El nombre es requerido.",
+      lastName: "El apellido es requerido.",
+      email: "El correo electrónico es requerido.",
+      phone: "El número de teléfono es requerido.",
+      message: "Por favor díganos en qué necesita ayuda.",
+    },
+    success: "enviado. Nos comunicaremos pronto.",
+  },
+};
+
+export default function EstimateForm({ serviceName = "Estimate", language = "en" }) {
+  const text = formText[language] || formText.en;
   const [form, setForm] = useState(initial);
   const [status, setStatus] = useState({ type: "idle", message: "" });
 
@@ -18,11 +60,11 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
   }
 
   function validate() {
-    if (!form.firstName.trim()) return "First name is required.";
-    if (!form.lastName.trim()) return "Last name is required.";
-    if (!form.email.trim()) return "Email is required.";
-    if (!form.phone.trim()) return "Phone number is required.";
-    if (!form.message.trim()) return "Please tell us what you need help with.";
+    if (!form.firstName.trim()) return text.errors.firstName;
+    if (!form.lastName.trim()) return text.errors.lastName;
+    if (!form.email.trim()) return text.errors.email;
+    if (!form.phone.trim()) return text.errors.phone;
+    if (!form.message.trim()) return text.errors.message;
     return "";
   }
 
@@ -36,21 +78,21 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
     }
 
     // TODO: connect to backend/API later
-    setStatus({ type: "success", message: `${serviceName} request sent! We'll reach out soon.` });
+    setStatus({ type: "success", message: `${serviceName} ${text.success}` });
     setForm(initial);
   }
 
   return (
-    <section style={styles.card} aria-label={`Get a free estimate for ${serviceName}`}>
+    <section style={styles.card} aria-label={`${text.ariaLabel} ${serviceName}`}>
       <div style={styles.header}>
-        <div style={styles.kicker}>GET A FREE ESTIMATE</div>
+        <div style={styles.kicker}>{text.kicker}</div>
       </div>
 
       <form onSubmit={onSubmit} style={styles.form}>
         <div style={styles.row}>
           <div style={styles.field}>
             <label style={styles.label}>
-              First Name: <span style={styles.req}>(required)</span>
+              {text.firstName} <span style={styles.req}>{text.required}</span>
             </label>
             <input
               name="firstName"
@@ -63,7 +105,7 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
 
           <div style={styles.field}>
             <label style={styles.label}>
-              Last Name: <span style={styles.req}>(required)</span>
+              {text.lastName} <span style={styles.req}>{text.required}</span>
             </label>
             <input
               name="lastName"
@@ -77,7 +119,7 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
 
         <div style={styles.field}>
           <label style={styles.label}>
-            Email: <span style={styles.req}>(required)</span>
+            {text.email} <span style={styles.req}>{text.required}</span>
           </label>
           <input
             name="email"
@@ -91,7 +133,7 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
 
         <div style={styles.field}>
           <label style={styles.label}>
-            Phone Number: <span style={styles.req}>(required)</span>
+            {text.phone} <span style={styles.req}>{text.required}</span>
           </label>
           <input
             name="phone"
@@ -105,7 +147,7 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
 
         <div style={styles.field}>
           <label style={styles.label}>
-            What can we help you with? <span style={styles.req}>(required)</span>
+            {text.message} <span style={styles.req}>{text.required}</span>
           </label>
           <textarea
             name="message"
@@ -128,7 +170,7 @@ export default function EstimateForm({ serviceName = "Estimate" }) {
         )}
 
         <button type="submit" style={styles.button}>
-          Request Estimate
+          {text.submit}
         </button>
       </form>
     </section>
